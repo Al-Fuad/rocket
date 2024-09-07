@@ -1,0 +1,13 @@
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/icon/rocketIcon.png"
+  web:
+    generate: true
+    image_path: "assets/icon/rocketIcon.png"
+  windows:
+    generate: true
+    image_path: "assets/icon/rocketIcon.png"
+  macos:
+    generate: true
+    image_path: "assets/icon/rocketIcon.png"
