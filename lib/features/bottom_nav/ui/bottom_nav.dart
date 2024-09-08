@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:rocket/common/widgets/backgrounds/background.dart';
 import 'package:rocket/features/bottom_nav/bloc/bottom_nav_bloc.dart';
 import 'package:rocket/features/rocket/chatbot/ui/chatbot.dart';
 import 'package:rocket/features/rocket/exoplanet/ui/exoplanet.dart';
 import 'package:rocket/features/rocket/games/ui/games.dart';
 import 'package:rocket/features/rocket/home/ui/home.dart';
 import 'package:rocket/features/personalization/profile/ui/profile.dart';
+import 'package:rocket/utils/constant/rocket_color.dart';
 
 class BottomNav extends StatelessWidget {
   const BottomNav({super.key});
@@ -27,12 +29,18 @@ class BottomNav extends StatelessWidget {
       builder: (context, state) {
         return Scaffold(
           body: bottomNavScreen.elementAt(state.tabIndex),
-          bottomNavigationBar: Theme(
-            data: ThemeData(
-              canvasColor: Colors.transparent,
+          bottomNavigationBar: Container(
+            height: 110,
+            decoration: BoxDecoration(
+              border: Border(
+                top: BorderSide(
+                  color: RocketColor.primary,
+                  width: 1,
+                ),
+              ),
             ),
-            child: SizedBox(
-              height: 110,
+            child: Background(
+              opacity: 0.5,
               child: BottomNavigationBar(
                 backgroundColor: Colors.black.withOpacity(0.1),
                 items: [
@@ -105,8 +113,6 @@ class BottomNav extends StatelessWidget {
               ),
             ),
           ),
-          extendBodyBehindAppBar: true,
-          extendBody: true,
         );
       },
     );
